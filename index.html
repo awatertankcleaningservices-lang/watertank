@@ -3,125 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A1 Water Tank Cleaning Services - Google Search</title>
+    <title>A1 WATER TANK CLEANING - Reviews & Share</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-        body { font-family: 'Roboto', sans-serif; background-color: #ffffff; }
+        body { font-family: 'Roboto', sans-serif; background-color: #ffffff; color: #3c4043; -webkit-tap-highlight-color: transparent; }
         .google-shadow { box-shadow: 0 1px 6px rgba(32,33,36,.28); }
-        .btn-circle { width: 45px; height: 45px; border-radius: 50%; border: 1px solid #dadce0; display: flex; align-items: center; justify-content: center; color: #1a73e8; transition: all 0.2s; }
-        .btn-circle:active { background-color: #f1f3f4; }
+        .action-btn { display: flex; flex-direction: column; align-items: center; gap: 8px; color: #1a73e8; flex: 1; cursor: pointer; }
+        .icon-circle { width: 42px; height: 42px; border-radius: 50%; border: 1px solid #dadce0; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+        .icon-circle:active { background-color: #e8f0fe; transform: scale(0.9); }
+        
+        /* Modal Style */
+        #reviewModal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; align-items: center; justify-content: center; padding: 20px; }
+        .modal-content { background: white; width: 100%; max-width: 400px; border-radius: 12px; padding: 24px; animation: slideUp 0.3s ease-out; }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .star-rating { display: flex; gap: 8px; justify-content: center; margin: 15px 0; }
+        .star { font-size: 32px; color: #dadce0; cursor: pointer; }
+        .star.active { color: #fbbc04; }
     </style>
 </head>
-<body class="max-w-md mx-auto">
+<body class="max-w-md mx-auto min-h-screen pb-24">
 
-    <!-- Top Status Bar Simulation -->
-    <div class="p-4 flex items-center border-b border-gray-200 sticky top-0 bg-white z-50">
-        <svg focusable="false" viewBox="0 0 24 24" width="24" height="24" class="text-gray-500 mr-4"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
-        <div class="flex-grow font-medium text-gray-700">A1 Water Tank Cleaning...</div>
-        <svg focusable="false" viewBox="0 0 24 24" width="24" height="24" class="text-blue-600"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
-    </div>
-
-    <!-- Main Title Section -->
-    <div class="p-5 border-b border-gray-200">
-        <h1 class="text-2xl font-normal text-gray-900 leading-tight">A1 WATER TANK CLEANING SERVICES | Water Tank Cleaning | Home Deep Cleaning</h1>
-        <div class="flex items-center mt-2">
-            <span class="text-gray-700 font-medium mr-1">5.0</span>
-            <div class="flex text-orange-400 text-sm">★★★★★</div>
-            <span class="text-blue-600 ml-2 text-sm">(54) · Water Tank Cleaners</span>
-            <span class="text-green-700 ml-2 text-sm font-medium border-l pl-2">Open</span>
+    <!-- Header Section -->
+    <div class="sticky top-0 bg-white z-50 border-b border-gray-200 p-4 flex items-center gap-3">
+        <svg viewBox="0 0 24 24" width="22" height="22" class="text-gray-500"><path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+        <div class="flex-1 bg-gray-100 rounded-full px-4 py-2 flex items-center justify-between text-sm">
+            <span class="truncate">A1 Water Tank Cleaning Services</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" class="text-blue-600"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
         </div>
     </div>
 
-    <!-- Action Buttons (Call, Directions, WhatsApp) -->
-    <div class="flex justify-around p-4 border-b border-gray-200">
-        <a href="tel:+917090308285" class="flex flex-col items-center">
-            <div class="btn-circle mb-1">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
-            </div>
-            <span class="text-xs text-blue-600 font-medium">Call</span>
-        </a>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=Uttarahalli,Bengaluru" class="flex flex-col items-center">
-            <div class="btn-circle mb-1">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21.71 11.29l-9-9c-.39-.39-1.02-.39-1.41 0l-9 9c-.39.39-.39 1.02 0 1.41l9 9c.39.39 1.02.39 1.41 0l9-9c.39-.38.39-1.01 0-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"></path></svg>
-            </div>
-            <span class="text-xs text-blue-600 font-medium">Directions</span>
-        </a>
-        <a href="https://wa.me/917090308285" class="flex flex-col items-center">
-            <div class="btn-circle mb-1">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.47 2 2 6.48 2 12.05c0 1.84.5 3.55 1.36 5.02L2 22l5.07-1.33c1.42.77 3.03 1.22 4.75 1.22 5.57 0 10.04-4.48 10.04-10.05 0-5.57-4.47-10.05-10.04-10.05zm0 18.2c-1.63 0-3.12-.42-4.42-1.16l-.32-.18-3 1.14 1.16-3-.2-.32C4.54 15.6 4.12 14.15 4.12 12.5c0-4.38 3.55-7.93 7.92-7.93 4.38 0 7.93 3.55 7.93 7.93 0 4.38-3.55 7.93-7.93 7.93z"></path></svg>
-            </div>
-            <span class="text-xs text-blue-600 font-medium">WhatsApp</span>
-        </a>
-        <div class="flex flex-col items-center">
-            <div class="btn-circle mb-1">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"></path></svg>
-            </div>
-            <span class="text-xs text-blue-600 font-medium">Share</span>
-        </div>
-    </div>
-
-    <!-- Address & Map Section -->
-    <div class="p-5 border-b border-gray-200">
-        <div class="flex items-start mb-4">
-            <svg class="text-gray-400 mt-1 mr-4" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
-            <div class="text-sm text-gray-700">chikkagowdanpalya uttari, main road, 93/B, 2nd Main Rd, near Bright Way School, Uttarahalli Hobli, Bengaluru, Karnataka 560062</div>
-        </div>
-        <div class="w-full h-48 rounded-xl overflow-hidden google-shadow mt-4">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.378772413123!2d77.5312!3d12.90!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3f9468e2f83d%3A0x6b4c6e3d23e0e0a!2sUttarahalli%20Hobli%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </div>
-
-    <!-- Photos Section -->
-    <div class="p-5 border-b border-gray-200">
-        <div class="flex justify-between items-center mb-4">
-            <h2 class="text-lg font-medium">Photos</h2>
-            <span class="text-blue-600 text-sm font-medium">View all</span>
-        </div>
-        <div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
-            <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400" class="w-32 h-32 object-cover rounded-lg flex-shrink-0">
-            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400" class="w-32 h-32 object-cover rounded-lg flex-shrink-0">
-            <div class="w-32 h-32 bg-gray-100 flex flex-col items-center justify-center rounded-lg flex-shrink-0 border border-gray-200">
-                <svg width="24" height="24" fill="#1a73e8" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg>
-                <span class="text-[10px] text-blue-600 font-bold uppercase mt-1">Add Photo</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Review Section -->
+    <!-- Business Info -->
     <div class="p-5">
-        <div class="flex justify-between items-center mb-4">
-            <h2 class="text-lg font-medium">Reviews</h2>
-            <button onclick="document.getElementById('reviewForm').classList.toggle('hidden')" class="text-blue-600 text-sm font-medium">Write a review</button>
+        <h1 class="text-2xl font-normal text-gray-900 leading-tight mb-2">A1 WATER TANK CLEANING SERVICES</h1>
+        <div class="flex items-center gap-1 text-sm mb-1">
+            <span class="font-bold text-gray-800">5.0</span>
+            <div class="flex text-yellow-500 text-xs">★★★★★</div>
+            <span class="text-blue-600 ml-1">(154 Reviews)</span>
+        </div>
+        <p class="text-sm text-gray-500">Water tank cleaning service in Bengaluru</p>
+        <div class="flex items-center gap-2 mt-2">
+            <span class="text-green-700 font-bold text-sm">Open 24 hours</span>
+        </div>
+    </div>
+
+    <!-- Main Action Buttons -->
+    <div class="flex justify-between py-4 border-y border-gray-100 px-2 mb-4">
+        <a href="tel:+917090308285" class="action-btn">
+            <div class="icon-circle"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg></div>
+            <span class="text-[11px] font-medium uppercase">Call</span>
+        </a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Silicon+Enclave+Residential+Layout+8th+Phase+Konanakunte+Bengaluru+560108" target="_blank" class="action-btn">
+            <div class="icon-circle"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9c-.39-.39-1.02-.39-1.41 0l-9 9c-.39.39-.39 1.02 0 1.41l9 9c.39.39 1.02.39 1.41 0l9-9c.39-.38.39-1.01 0-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"></path></svg></div>
+            <span class="text-[11px] font-medium uppercase">Directions</span>
+        </a>
+        <div onclick="openReview()" class="action-btn">
+            <div class="icon-circle"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div>
+            <span class="text-[11px] font-medium uppercase">Review</span>
+        </div>
+        <div onclick="shareSite()" class="action-btn">
+            <div class="icon-circle"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"></path></svg></div>
+            <span class="text-[11px] font-medium uppercase">Share</span>
+        </div>
+    </div>
+
+    <!-- Detailed Address -->
+    <div class="px-5 py-4 border-b border-gray-100 flex items-start gap-4">
+        <svg class="text-gray-400 mt-1 flex-shrink-0" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+        <div class="text-sm text-gray-700">
+            Dps Bangalore South Road, Silicon Enclave, 8th Phase, Konanakunte, Bengaluru, 560108
+        </div>
+    </div>
+
+    <!-- Review Summary Section (Google Style) -->
+    <div class="p-5">
+        <h2 class="text-lg font-medium text-gray-900 mb-4">Review Summary</h2>
+        <div class="flex items-center gap-4 mb-6">
+            <div class="text-center">
+                <div class="text-4xl font-normal text-gray-900">5.0</div>
+                <div class="flex text-yellow-500 text-[10px] mt-1">★★★★★</div>
+                <div class="text-[10px] text-gray-500 mt-1 uppercase">154 reviews</div>
+            </div>
+            <div class="flex-1 space-y-1">
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] w-2">5</span>
+                    <div class="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-yellow-400 w-full"></div></div>
+                </div>
+                <div class="flex items-center gap-2 opacity-30">
+                    <span class="text-[10px] w-2">4</span>
+                    <div class="flex-1 h-2 bg-gray-100 rounded-full"></div>
+                </div>
+                <div class="flex items-center gap-2 opacity-30">
+                    <span class="text-[10px] w-2">3</span>
+                    <div class="flex-1 h-2 bg-gray-100 rounded-full"></div>
+                </div>
+            </div>
         </div>
         
-        <div id="reviewForm" class="hidden mb-6 p-4 bg-gray-50 rounded-xl border border-gray-200">
-             <input type="text" id="revName" placeholder="Aapka Naam" class="w-full p-2 mb-2 border rounded-md text-sm">
-             <textarea id="revText" placeholder="Experience likhein..." class="w-full p-2 mb-2 border rounded-md text-sm"></textarea>
-             <button onclick="sendReview()" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full">Post Review</button>
-        </div>
+        <button onclick="openReview()" class="w-full py-2.5 border border-gray-200 rounded-full text-blue-600 font-bold text-sm google-shadow active:bg-gray-50 mb-6">
+            Write a review
+        </button>
 
+        <!-- Mock Reviews -->
         <div class="space-y-6">
             <div class="border-b border-gray-100 pb-4">
-                <div class="flex items-center mb-2">
-                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xs mr-3">R</div>
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-xs uppercase">A</div>
                     <div>
-                        <div class="text-sm font-medium">Rajesh Kumar</div>
-                        <div class="flex text-orange-400 text-[10px]">★★★★★ <span class="text-gray-400 ml-2 font-normal">2 months ago</span></div>
+                        <p class="text-xs font-bold">Animesh Gupta</p>
+                        <div class="flex text-yellow-500 text-[8px]">★★★★★ <span class="text-gray-400 ml-2 font-normal">2 days ago</span></div>
                     </div>
                 </div>
-                <p class="text-sm text-gray-600 leading-relaxed">Excellent service by Mehboob. Highly recommended for tank cleaning in Bengaluru.</p>
+                <p class="text-sm text-gray-600">Great experience. Mehboob arrived on time and used high pressure cleaning equipment. Best in Bangalore!</p>
             </div>
         </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div id="reviewModal">
+        <div class="modal-content">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">A1 Water Tank Cleaning</h3>
+            <p class="text-sm text-gray-500 mb-4">Share your experience with us</p>
+            
+            <div class="star-rating" id="starContainer">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+
+            <textarea id="reviewText" placeholder="Describe your experience..." class="w-full border border-gray-200 rounded-lg p-3 text-sm h-32 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            
+            <div class="flex gap-3">
+                <button onclick="closeReview()" class="flex-1 py-2 text-gray-500 font-medium">Cancel</button>
+                <button onclick="submitReview()" class="flex-1 py-2 bg-blue-600 text-white font-bold rounded-lg shadow-md">Post</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Action Bar -->
+    <div class="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-100 flex gap-3 max-w-md mx-auto z-40">
+        <a href="tel:+917090308285" class="flex-1 bg-gray-100 text-gray-800 font-bold py-3 rounded-lg text-center text-sm">Call Now</a>
+        <a href="https://wa.me/917090308285?text=I want to book a tank cleaning service" class="flex-[2] bg-blue-600 text-white font-bold py-3 rounded-lg text-center text-sm shadow-lg shadow-blue-200">Book on WhatsApp</a>
     </div>
 
     <script>
-        function sendReview() {
-            const name = document.getElementById('revName').value;
-            const text = document.getElementById('revText').value;
-            if(!name || !text) return alert("Please fill details!");
-            const msg = `*Google Business Review*\n\n👤 *User:* ${name}\n⭐ *Rating:* 5/5\n💬 *Review:* ${text}`;
-            window.location.href = `https://wa.me/917090308285?text=${encodeURIComponent(msg)}`;
+        let selectedStars = 5;
+
+        // Share functionality
+        async function shareSite() {
+            const shareData = {
+                title: 'A1 Water Tank Cleaning Services',
+                text: 'Safe & Clean Drinking Water! Book A1 Tank Cleaning Services in Bangalore.',
+                url: window.location.href
+            }
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    const dummy = document.createElement('input');
+                    document.body.appendChild(dummy);
+                    dummy.value = window.location.href;
+                    dummy.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(dummy);
+                    alert("Link copied! Share it with your friends.");
+                }
+            } catch (err) { console.log(err); }
+        }
+
+        // Review logic
+        function openReview() {
+            document.getElementById('reviewModal').style.display = 'flex';
+            resetStars();
+        }
+
+        function closeReview() {
+            document.getElementById('reviewModal').style.display = 'none';
+        }
+
+        function resetStars() {
+            selectedStars = 5;
+            updateStars(5);
+        }
+
+        document.querySelectorAll('.star').forEach(star => {
+            star.addEventListener('click', (e) => {
+                selectedStars = e.target.getAttribute('data-value');
+                updateStars(selectedStars);
+            });
+        });
+
+        function updateStars(val) {
+            const stars = document.querySelectorAll('.star');
+            stars.forEach((s, idx) => {
+                if (idx < val) s.classList.add('active');
+                else s.classList.remove('active');
+            });
+        }
+
+        function submitReview() {
+            const text = document.getElementById('reviewText').value;
+            if(!text) {
+                alert("Please write something about our service!");
+                return;
+            }
+            const starsStr = "★".repeat(selectedStars);
+            const message = `Hi Mehboob, I want to give a review for A1 Water Tank Cleaning:\n\nRating: ${starsStr} (${selectedStars}/5)\nFeedback: ${text}`;
+            
+            // Redirect to WhatsApp
+            window.location.href = `https://wa.me/917090308285?text=${encodeURIComponent(message)}`;
+            closeReview();
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('reviewModal');
+            if (event.target == modal) closeReview();
         }
     </script>
 </body>
