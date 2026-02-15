@@ -1,91 +1,137 @@
-<!-- KGN Review System Section Starts -->
-<section id="reviews" style="padding: 50px 20px; background-color: #f9f9f9; font-family: sans-serif;">
-    <div style="max-width: 800px; margin: 0 auto;">
-        <h2 style="text-align: center; color: #1e40af; font-size: 32px;">Customer Reviews</h2>
-        <p style="text-align: center; color: #666; margin-bottom: 30px;">Website par hi apna review submit karein!</p>
+                <!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KGN Water Tank Cleaning Services - Bangalore</title>
+    <!-- Tailwind CSS for modern design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 font-sans">
 
-        <!-- Review Form -->
-        <div style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); margin-bottom: 40px;">
-            <h3 style="margin-top: 0; font-size: 20px;">Review Likhein</h3>
-            <div style="margin-bottom: 15px;">
-                <input type="text" id="custName" placeholder="Aapka Naam" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none; box-sizing: border-box;">
+    <!-- Header / Navbar -->
+    <nav class="bg-blue-700 text-white p-4 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-black tracking-tight">KGN CLEANING</h1>
+            <div class="space-x-4 text-sm font-bold">
+                <a href="#home" class="hover:underline">Home</a>
+                <a href="#services" class="hover:underline">Services</a>
+                <a href="#reviews" class="hover:underline">Reviews</a>
             </div>
-            <div style="margin-bottom: 15px;">
-                <label style="font-size: 14px; color: #555;">Rating (1-5 Stars):</label>
-                <select id="custRating" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none; background: white;">
-                    <option value="5">⭐⭐⭐⭐⭐ (5 Stars)</option>
-                    <option value="4">⭐⭐⭐⭐ (4 Stars)</option>
-                    <option value="3">⭐⭐⭐ (3 Stars)</option>
-                    <option value="2">⭐⭐ (2 Stars)</option>
-                    <option value="1">⭐ (1 Star)</option>
-                </select>
-            </div>
-            <div style="margin-bottom: 15px;">
-                <textarea id="custComment" placeholder="KGN ki service kaisi lagi?" rows="4" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none; box-sizing: border-box;"></textarea>
-            </div>
-            <button onclick="submitKgnReview()" style="width: 100%; background: #2563eb; color: white; border: none; padding: 15px; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.3s;">
-                Submit Review
-            </button>
-            <p id="successMsg" style="color: green; text-align: center; display: none; margin-top: 10px; font-weight: bold;">Review submit ho gaya! Dhanyawad Jaan.</p>
         </div>
+    </nav>
 
-        <!-- Display Reviews -->
-        <h3 style="font-size: 22px; color: #333;">Recent Reviews</h3>
-        <div id="reviewList" style="display: flex; flex-direction: column; gap: 15px;">
-            <!-- Reviews will appear here -->
-            <div style="background: white; padding: 20px; border-radius: 15px; border-left: 5px solid #2563eb;">
-                <p style="margin: 0; font-weight: bold; color: #1e40af;">Arjun Singh <span style="color: #fbbf24;">⭐⭐⭐⭐⭐</span></p>
-                <p style="margin: 5px 0; color: #555; font-style: italic;">"Best tank cleaning service in Bangalore!"</p>
-                <div style="margin-top: 10px; padding: 10px; background: #eff6ff; border-radius: 10px; font-size: 13px;">
-                    <strong style="color: #2563eb;">KGN Reply:</strong> Dhanyawad Arjun bhai!
+    <!-- Hero Section -->
+    <section id="home" class="py-16 px-6 text-center bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Professional Water Tank Cleaning in Bangalore</h2>
+            <p class="text-slate-600 mb-8">Hamara kaam, aapki sehat aur shaan. Ek baar service lein aur farak dekhein!</p>
+            <a href="tel:+91XXXXXXXXXX" class="bg-blue-600 text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-blue-700 transition inline-block">
+                <i class="fas fa-phone-alt mr-2"></i> Call Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 px-6 bg-blue-50">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-3xl shadow-sm text-center">
+                <i class="fas fa-shield-virus text-4xl text-blue-600 mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Deep Cleaning</h3>
+                <p class="text-slate-500 text-sm">6-step process for 100% bacteria free water tanks.</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-sm text-center border-2 border-blue-200">
+                <i class="fas fa-clock text-4xl text-blue-600 mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Fast Service</h3>
+                <p class="text-slate-500 text-sm">Sirf 1 call aur hamari team aapke darwaze par.</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-sm text-center">
+                <i class="fas fa-tools text-4xl text-blue-600 mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Modern Tools</h3>
+                <p class="text-slate-500 text-sm">Latest machines aur safe chemicals ka istemal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review System Section (Yahan humne naya system add kiya hai) -->
+    <section id="reviews" class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-900">Customer Reviews</h2>
+                <p class="text-slate-500">Log hamare kaam ke baare mein kya kehte hain</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Review Form -->
+                <div class="bg-white p-6 rounded-3xl shadow-xl border border-slate-100">
+                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                        <i class="fas fa-pen text-blue-600"></i> Review Likhein
+                    </h3>
+                    <div class="space-y-4">
+                        <input type="text" id="custName" placeholder="Aapka Naam" class="w-full p-3 bg-slate-50 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 border-none">
+                        
+                        <select id="custRating" class="w-full p-3 bg-slate-50 rounded-xl outline-none border-none">
+                            <option value="5">⭐⭐⭐⭐⭐ (5 Stars)</option>
+                            <option value="4">⭐⭐⭐⭐ (4 Stars)</option>
+                            <option value="3">⭐⭐⭐ (3 Stars)</option>
+                        </select>
+                        
+                        <textarea id="custComment" placeholder="Apna experience likhein..." rows="3" class="w-full p-3 bg-slate-50 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 border-none"></textarea>
+                        
+                        <button onclick="submitKgnReview()" class="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition shadow-lg">
+                            Submit Review
+                        </button>
+                        <p id="successMsg" class="text-green-600 text-center font-bold text-sm hidden">Dhanyawad Jaan! Review add ho gaya.</p>
+                    </div>
+                </div>
+
+                <!-- Review List -->
+                <div id="reviewList" class="space-y-4 max-h-[450px] overflow-y-auto pr-2">
+                    <!-- Default Reviews -->
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                        <p class="font-bold text-slate-800">Mohit Kumar <span class="text-yellow-500 ml-2">⭐⭐⭐⭐⭐</span></p>
+                        <p class="text-sm text-slate-600 italic mt-1">"Best service in Bangalore. Tank looks like new now!"</p>
+                        <div class="mt-3 bg-blue-50 p-3 rounded-xl text-xs">
+                            <strong class="text-blue-700">KGN Reply:</strong> Thank you Mohit bhai!
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<script>
-    // Ye function review save karne ke liye hai (Temporary local storage version)
-    function submitKgnReview() {
-        const name = document.getElementById('custName').value;
-        const rating = document.getElementById('custRating').value;
-        const comment = document.getElementById('custComment').value;
-        const successMsg = document.getElementById('successMsg');
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-10 px-6 text-center">
+        <p class="font-bold text-lg">KGN WATER TANK CLEANING</p>
+        <p class="text-slate-500 text-xs mt-2">© 2026 KGN Services Bangalore. All Rights Reserved.</p>
+    </footer>
 
-        if(name && comment) {
-            // Stars banana
-            let stars = "";
-            for(let i=0; i<rating; i++) stars += "⭐";
+    <script>
+        function submitKgnReview() {
+            const name = document.getElementById('custName').value;
+            const rating = document.getElementById('custRating').value;
+            const comment = document.getElementById('custComment').value;
+            const successMsg = document.getElementById('successMsg');
 
-            // Naya review design
-            const newReview = `
-                <div style="background: white; padding: 20px; border-radius: 15px; border-left: 5px solid #2563eb; animation: fadeIn 0.5s;">
-                    <p style="margin: 0; font-weight: bold; color: #1e40af;">${name} <span style="color: #fbbf24;">${stars}</span></p>
-                    <p style="margin: 5px 0; color: #555; font-style: italic;">"${comment}"</p>
-                </div>
-            `;
-
-            // List mein sabse upar add karna
-            document.getElementById('reviewList').innerHTML = newReview + document.getElementById('reviewList').innerHTML;
-            
-            // Clear and Success
-            document.getElementById('custName').value = "";
-            document.getElementById('custComment').value = "";
-            successMsg.style.display = "block";
-            setTimeout(() => { successMsg.style.display = "none"; }, 3000);
-        } else {
-            alert("Jaan, naam aur comment likhna zaroori hai!");
+            if(name && comment) {
+                let stars = "⭐".repeat(rating);
+                const newReview = `
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-blue-100 transition-all">
+                        <p class="font-bold text-slate-800">${name} <span class="text-yellow-500 ml-2">${stars}</span></p>
+                        <p class="text-sm text-slate-600 italic mt-1">"${comment}"</p>
+                    </div>
+                `;
+                document.getElementById('reviewList').insertAdjacentHTML('afterbegin', newReview);
+                
+                document.getElementById('custName').value = "";
+                document.getElementById('custComment').value = "";
+                successMsg.classList.remove('hidden');
+                setTimeout(() => successMsg.classList.add('hidden'), 3000);
+            } else {
+                alert("Jaan, naam aur comment likhna zaroori hai!");
+            }
         }
-    }
-</script>
-
-<style>
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    button:hover { background: #1e40af !important; transform: scale(1.02); }
-</style>
-<!-- KGN Review System Section Ends -->
-
-        
+    </script>
+</body>
+</html>
